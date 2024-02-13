@@ -13,7 +13,7 @@ type weatherData struct {
 	} `json:"main"`
 }
 
-func query(city string) (weatherData, error) {
+func Query(city string) (weatherData, error) {
 	apiConfig, err := apiconfig.LoadApiConfig(".apiConfig")
 	if err != nil {
 		return weatherData{}, err

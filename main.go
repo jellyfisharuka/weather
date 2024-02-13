@@ -4,15 +4,17 @@ import (
 	"encoding/json"
 	"net/http"
 	"strings"
+	"weather/routes"
+
 )
 
 
 func main() {
-	http.HandleFunc("/hello", hello)
+	http.HandleFunc("/hello", routes.Hello)
 	http.HandleFunc("/weather/", 
 	func(w http.ResponseWriter, r *http.Request){
 		city:= strings.SplitN(r.URL.Path, "/", 3)[2]
-		data,err:=query(city)
+		data,err:=routes.Query(city)
 		if err!=nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return 
