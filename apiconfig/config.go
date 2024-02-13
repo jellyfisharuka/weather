@@ -6,7 +6,7 @@ import (
 )
 
 type apiConfigData struct {
-	OpenWeatherMapApiKey string `json:"OpenWeatherMapApiLey"`
+	OpenWeatherMapApiKey string `json:"OpenWeatherMapApiKey"`
 }
 
 func LoadApiConfig(filename string) (apiConfigData, error) {
