@@ -5,7 +5,12 @@
         <title>{{ .Title}}</title>
     </head>
     <body>
+        {{if .Success}}
         <h1>{{ .Title}}</h1>
         <p>{{ .Message}}</p>
+        {{else}}
+        <h1>{{ .T}}</h1>
+        <p>{{ .Mes}}</p>
+        {{end}}
     </body>
 </html>
